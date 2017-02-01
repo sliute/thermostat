@@ -1393,15 +1393,15 @@ a.bg-info:hover,
 a.bg-info:focus {
   background-color: #afd9ee;
 }
-.bg-black {
+.medium-usage {
   background-color: #000;
   color: #ffffff;
 }
-.bg-green {
+.low-usage {
   background-color: #0f0;
   color: #000;
 }
-.bg-red {
+.high-usage {
   background-color: #f00;
   color: #fff;
 }
