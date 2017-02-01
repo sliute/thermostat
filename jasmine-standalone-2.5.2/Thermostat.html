@@ -10,13 +10,13 @@
   <meta name="description" content="The IS Thermostat">
   <meta name="author" content="Irene Canuti and Stefan Liute">
 
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 text-right" style="margin-top:2em;">
         <p>
           <button id="PSM" type="button" class="btn btn-warning btn-lg">PSM</button>
         </p>
@@ -24,17 +24,24 @@
           <button id="RESET" type="button" class="btn btn-danger btn-xs">Reset</button>
         </p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-center">
         <div id="temperature">
-          <h1>20 °C</h1>
+          <h1 class="bg-success">20 °C</h1>
         </div>
-        <div id="temperature">
+        <div id="usage">
           <p class="bg-black">medium-usage</p>
         </div>
-
+        <div id="PSM">
+          <p class="bg-primary">PSM ON</p>
+        </div>
       </div>
-      <div class="col-md-4">
-        right
+      <div class="col-md-4 text-left" style="margin-top:2em;">
+        <p>
+          <button id="up" type="button" class="btn btn-info btn-default">UP</button>
+        </p>
+        <p>
+          <button id="down" type="button" class="btn btn-info btn-default">DOWN</button>
+        </p>
       </div>
     </div>
   </div>
