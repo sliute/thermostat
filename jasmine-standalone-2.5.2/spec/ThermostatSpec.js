@@ -28,9 +28,17 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(10);
   });
 
+  it('can be reset to 20 degrees', function() {
+    for (var i = 0; i < 3; i++) {
+      thermostat.down();
+    };
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
   describe('power saving mode', function(){
 
-    it('is on', function() {
+    it('is on by default', function() {
       expect(thermostat.isPowerSavingOn).toBeTruthy();
     });
 
@@ -43,6 +51,21 @@ describe('Thermostat', function() {
       thermostat.powerSavingOff()
       thermostat.powerSavingOn()
       expect(thermostat.isPowerSavingOn).toBeTruthy();
+    });
+
+    it('allows for a maximum of 25 degrees when on', function() {
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      };
+      expect(thermostat.temperature).toEqual(25);
+    });
+
+    it('allows for a maximum of 32 degrees when off', function() {
+      thermostat.powerSavingOff();
+      for (var i = 0; i < 13; i++) {
+        thermostat.up();
+      };
+      expect(thermostat.temperature).toEqual(32);
     });
 
   });
