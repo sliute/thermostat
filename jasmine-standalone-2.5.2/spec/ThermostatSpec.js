@@ -28,4 +28,24 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(10);
   });
 
+  describe('power saving mode', function(){
+
+    it('is on', function() {
+      expect(thermostat.isPowerSavingOn).toBeTruthy();
+    });
+
+    it('can be turned off', function() {
+      thermostat.powerSavingOff()
+      expect(thermostat.isPowerSavingOn).toBeFalsy();
+    });
+
+    it('can be turned on', function() {
+      thermostat.powerSavingOff()
+      thermostat.powerSavingOn()
+      expect(thermostat.isPowerSavingOn).toBeTruthy();
+    });
+
+  });
+
+
 });
