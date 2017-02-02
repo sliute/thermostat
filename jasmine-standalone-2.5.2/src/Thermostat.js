@@ -12,6 +12,8 @@ function Thermostat() {
 Thermostat.prototype.up = function() {
   if (this.isPowerSavingOn === false) {
     this.MAXIMUM_TEMPERATURE = this.MAXIMUM_PSM_OFF;
+  } else {
+    this.MAXIMUM_TEMPERATURE = this.MAXIMUM_PSM_ON
   };
 
   if (this.temperature === this.MAXIMUM_TEMPERATURE) {
@@ -38,6 +40,7 @@ Thermostat.prototype.powerSavingOn = function() {
 
 Thermostat.prototype.reset = function()  {
   this.temperature = 20;
+  this.isPowerSavingOn = true;
 };
 
 Thermostat.prototype.energyUsage = function()  {
